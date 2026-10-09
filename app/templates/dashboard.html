@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AISEO.ai – Content Audit</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="logo-icon">A</div>
+        <span>AISEO.ai</span>
+      </div>
+      <nav>
+        <div class="nav-section">DASHBOARD</div>
+        <a href="#" class="nav-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+          Overview
+        </a>
+        <a href="#" class="nav-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          Analytics
+        </a>
+        <a href="#" class="nav-item active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          Audit
+        </a>
+
+        <div class="nav-section">MAIN NAVIGATION</div>
+        <a href="#" class="nav-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+          Documents
+        </a>
+        <a href="#" class="nav-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          Templates
+        </a>
+        <a href="#" class="nav-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/></svg>
+          Keywords
+        </a>
+        <a href="#" class="nav-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          Campaigns
+          <span class="badge">2</span>
+        </a>
+        <a href="#" class="nav-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          Team
+        </a>
+        <a href="#" class="nav-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Workflows
+        </a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="nav-section">DASHBOARD</div>
+        <a href="#" class="nav-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          Settings
+        </a>
+        <a href="#" class="nav-item logout">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+          Log out
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <!-- Top bar -->
+      <header class="topbar">
+        <div class="breadcrumb">
+          <span>Home</span>
+          <span class="sep">/</span>
+          <span>Dashboard</span>
+          <span class="sep">/</span>
+          <span class="current">Site Audit</span>
+        </div>
+        <div class="topbar-right">
+          <div class="search-box">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input type="text" placeholder="Type here to search data..." id="globalSearch" />
+          </div>
+          <button class="btn-share">Share</button>
+          <div class="user-chip">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Kevin" alt="" />
+            <div>
+              <div class="user-name">Kevine Harry</div>
+              <div class="user-role">Admin</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Controls -->
+      <div class="controls">
+        <div class="control-group">
+          <label>Website</label>
+          <select id="websiteSelect">
+            {% for w in websites %}
+            <option value="{{ w.id }}" {% if w.id == default_website_id %}selected{% endif %}>
+              {{ w.url }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="control-group">
+          <label>Country</label>
+          <select id="countrySelect">
+            <option value="India">🇮🇳 India</option>
+            <option value="Germany">🇩🇪 Germany</option>
+            <option value="USA">🇺🇸 USA</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label>Scope</label>
+          <select>
+            <option>Whole site</option>
+            <option>Single page</option>
+          </select>
+        </div>
+        <button class="btn-secondary" id="addWebsiteBtn" title="Add any website">
+          + Add Website
+        </button>
+        <button class="btn-primary" id="runAuditBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l14 9-14 9V3z"/></svg>
+          Run Audit
+        </button>
+      </div>
+
+      <!-- Add Website Modal -->
+      <div id="addWebsiteModal" class="modal hidden">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="modal-box">
+          <h3>Add Website to Audit</h3>
+          <p class="modal-hint">Enter any website URL. We will discover pages and run a content audit.</p>
+          <label>Website URL</label>
+          <input type="url" id="newWebsiteUrl" placeholder="https://example.com" />
+          <label>Display Name (optional)</label>
+          <input type="text" id="newWebsiteName" placeholder="Example Site" />
+          <div class="modal-actions">
+            <button class="btn-secondary" id="cancelAddBtn">Cancel</button>
+            <button class="btn-primary" id="confirmAddBtn">Add & Audit</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Audit header -->
+      <div class="section-header">
+        <div>
+          <h1>Content Audit</h1>
+          <p class="subtitle" id="auditSubtitle">Loading…</p>
+        </div>
+        <div class="section-actions">
+          <select id="dateRange">
+            <option>Last 30 days</option>
+            <option>Last 7 days</option>
+            <option>Last 90 days</option>
+          </select>
+          <button class="btn-outline">Export</button>
+        </div>
+      </div>
+
+      <!-- Cards row -->
+      <div class="cards-row">
+        <!-- Content Score -->
+        <div class="card score-card">
+          <div class="card-title">Content Score</div>
+          <div class="big-score" id="contentScore">–</div>
+          <div class="score-bar">
+            <div class="score-fill" id="scoreFill"></div>
+          </div>
+          <div class="score-labels">
+            <span>Poor</span>
+            <span>Need Improvement</span>
+            <span>Great</span>
+          </div>
+          <ul class="check-list" id="checkList">
+            <!-- filled by JS -->
+          </ul>
+        </div>
+
+        <!-- Readability & Freshness -->
+        <div class="card">
+          <div class="card-title">Readability & Freshness</div>
+          <div class="readability-row">
+            <div class="read-score" id="readScore">–</div>
+            <span class="badge-poor" id="readBadge">–</span>
+          </div>
+          <p class="muted" id="outdatedNote">– outdated pages</p>
+          <div class="divider"></div>
+          <div class="card-title" style="margin-top:12px">Organic Monthly Traffic</div>
+          <div class="traffic-num" id="organicTraffic">–</div>
+          <p class="muted">Approximately</p>
+          <div class="chart-wrap">
+            <canvas id="trafficChart" height="80"></canvas>
+          </div>
+        </div>
+
+        <!-- Top SEO Issues -->
+        <div class="card issues-card">
+          <div class="card-title-row">
+            <div class="card-title">Top SEO Issues Detected</div>
+            <button class="icon-btn">⋯</button>
+          </div>
+          <p class="muted small">High impact content to optimize next</p>
+          <ul class="issues-list" id="issuesList">
+            <!-- filled by JS -->
+          </ul>
+        </div>
+      </div>
+
+      <!-- Website content list -->
+      <div class="card table-card">
+        <div class="table-header">
+          <div class="card-title">Website content list</div>
+          <div class="table-actions">
+            <div class="search-mini">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <input type="text" placeholder="Search" id="tableSearch" />
+            </div>
+            <button class="btn-outline btn-sm">Filter</button>
+            <button class="btn-outline btn-sm">Sort</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Title & URL</th>
+                <th>SEO score</th>
+                <th>Readability</th>
+                <th>Page Size</th>
+                <th>Load time</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="pagesTable">
+              <!-- filled by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script>
+    const DEFAULT_WEBSITE_ID = {{ default_website_id }};
+  </script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
